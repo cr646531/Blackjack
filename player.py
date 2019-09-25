@@ -37,6 +37,10 @@ Player class
 			Returns the amount of money the player bet as a string
 				@parameters: none
 				@output: bet (string)
+		get_hand:
+			Returns the player's hand as a string
+				@parameters: none
+				@output: none
 
 '''
 
