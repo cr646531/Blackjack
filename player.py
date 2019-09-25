@@ -21,6 +21,10 @@ Player class
 			Adds a card to the player's hand
 				@parameters: card
 				@output: none
+		double_down:
+			Doubles the player's bet and adds a card to the player's hand
+				@parameters: card
+				@output: none
 		return_cards:
 			Removes the cards from the player's hand, so they can be returned to the deck
 				@parameters: none
@@ -82,6 +86,12 @@ class Player():
 
 		self.hand.append(card)
 
+	def double_down(self, card):
+
+		self.bankroll -= self.bet
+		self.bet *= 2
+		self.hit(card)
+
 	def return_cards(self):
 
 		cards = hand
@@ -91,6 +101,7 @@ class Player():
 	def get_total(self):
 
 		num_aces = 0
+		total = 0
 
 		for card in self.hand:
 			total += card.value
@@ -122,4 +133,5 @@ class Player():
 			output += f'{str(card)} '
 
 		output += f'({self.get_total()})'
+		return output
 
