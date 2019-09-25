@@ -12,6 +12,7 @@ def create_player():
 	player = Player(name)
 	print(f'\n{str(player)}')
 	return player
+	
 
 def prompt_bet(player):
 
@@ -29,12 +30,14 @@ def prompt_bet(player):
 
 	print(f'Current bet: ${player.bet}')
 
+
 def deal(deck, player, dealer):
 
 	player.hit(deck.pop(0))
 	player.hit(deck.pop(0))
 	dealer.hit(deck.pop(0))
 	show_hands(player, dealer)
+
 
 def show_hands(player, dealer):
 	print(f"---------------------------------------------------------------------\n")
@@ -75,6 +78,7 @@ def prompt_player_action(deck, player, dealer):
 	else:
 		print("Type 'h' to hit, 's' to stay, or 'd' to double-down ")
 		return 0
+
 
 def return_cards_to_deck(deck, player, dealer):
 
