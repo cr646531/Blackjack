@@ -25,7 +25,19 @@ Player class
 			Removes the cards from the player's hand, so they can be returned to the deck
 				@parameters: none
 				@output: list of cards
-		
+		get_total:
+			Returns the total value of the cards in the player's hand (accounting for aces)
+				@parameters: none
+				@output: total
+		get_bankroll:
+			Returns the amount of money the player has as a string
+				@parameters: none
+				@output: bankroll (string)
+		get_bet:
+			Returns the amount of money the player bet as a string
+				@parameters: none
+				@output: bet (string)
+
 '''
 
 class Player():
@@ -71,4 +83,30 @@ class Player():
 		cards = hand
 		hand = []
 		return cards
+
+	def get_total(self):
+
+		num_aces = 0
+
+		for card in self.hand:
+			total += card.value
+			if card.rank == 'Ace':
+				num_aces++
+
+		while num_aces != 0:
+			if total > 21:
+				total -= 10
+				num_aces--
+			else:
+				break
+
+		return total
+
+	def get_bankroll(self):
+
+		return f'{self.bankroll}'
+
+	def get_bet(self):
+
+		return f'{self.bet}'
 
