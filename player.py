@@ -5,7 +5,7 @@ Player class
 	@methods:
 		__init__
 		__str__
-		bet:
+		take_bet:
 			Removes the bet from the player's bankroll and stores it
 				@parameters: amount
 				@output: returns 1 if successful. returns -1 if the bet is not between $1 and the player's current bankroll
@@ -57,14 +57,14 @@ class Player():
 
 		return f'{self.name} has ${self.bankroll}'
 
-	def bet(self, amount):
-
-		if amount <= self.bankroll:
+	def take_bet(self, amount):
+		if amount <= self.bankroll and amount > 0:
 			self.bankroll -= amount
 			self.bet = amount
 			return 1
 		elif amount <= 0:
 			print(f'You must bet at least $1')
+			return -1
 		else:
 			print(f'Insufficent funds! You only have ${self.bankroll}.')
 			return -1
@@ -95,12 +95,12 @@ class Player():
 		for card in self.hand:
 			total += card.value
 			if card.rank == 'Ace':
-				num_aces++
+				num_aces += 1
 
 		while num_aces != 0:
 			if total > 21:
 				total -= 10
-				num_aces--
+				num_aces -= 1
 			else:
 				break
 
@@ -122,5 +122,4 @@ class Player():
 			output += f'{str(card)} '
 
 		output += f'({self.get_total()})'
-
 
