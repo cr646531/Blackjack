@@ -82,6 +82,10 @@ class Player():
 
 		self.bet = 0
 
+	def push(self):
+		self.bankroll += self.bet
+		self.bet = 0
+
 	def hit(self, card):
 
 		self.hand.append(card)
