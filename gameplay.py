@@ -76,5 +76,10 @@ def prompt_player_action(deck, player, dealer):
 		print("Type 'h' to hit, 's' to stay, or 'd' to double-down ")
 		return 0
 
+def return_cards_to_deck(deck, player, dealer):
+
+	 new_deck = deck + player.return_cards() + dealer.return_cards()
+	 return new_deck
+
 
 
