@@ -17,6 +17,10 @@ Player class
 			Resets the bet to 0
 				@parameters: none
 				@output: none
+		push:
+			Returns the bet to the player's hand, and reset the bet to 0
+				@parameters: none
+				@output: none
 		hit:
 			Adds a card to the player's hand
 				@parameters: card
