@@ -110,3 +110,13 @@ class Player():
 
 		return f'{self.bet}'
 
+	def get_hand(self):
+
+		output = ''
+
+		for card in self.hand:
+			output += f'{str(card)} '
+
+		output += f'({self.get_total()})'
+
+
