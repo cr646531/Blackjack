@@ -53,20 +53,24 @@ def prompt_player_action(deck, player, dealer):
 		show_hands(player, dealer)
 
 		if player.get_total() > 21:
+			return -1
+		elif player.get_total() == 21:
 			return 1
 		else:
 			return 0
 
 	elif response == 's':
 
-		dealer.play()
-		show_hands(player, dealer)
 		return 1
 
 	elif response == 'd':
 
 		player.double_down(deck.pop(0))
-		return 1
+		
+		if player.get_total() > 21:
+			return -1
+		else:
+			return 1
 
 	else:
 		print("Type 'h' to hit, 's' to stay, or 'd' to double-down ")
