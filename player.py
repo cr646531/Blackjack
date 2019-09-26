@@ -63,7 +63,7 @@ class Player():
 
 	def __str__(self):
 
-		return f'{self.name} has ${self.bankroll}'
+		return f'You have ${self.bankroll}\n'
 
 	def take_bet(self, amount):
 		if amount <= self.bankroll and amount > 0:
@@ -96,14 +96,18 @@ class Player():
 
 	def double_down(self, card):
 
-		self.bankroll -= self.bet
-		self.bet *= 2
-		self.hit(card)
+		if self.bet <= self.bankroll:
+			self.bankroll -= self.bet
+			self.bet *= 2
+			self.hit(card)
+		else:
+			print("You don't have enough to double-down! ")
+			self.hit(card)
 
 	def return_cards(self):
 
-		cards = hand
-		hand = []
+		cards = self.hand
+		self.hand = []
 		return cards
 
 	def get_total(self):
@@ -127,7 +131,7 @@ class Player():
 
 	def get_bankroll(self):
 
-		return f'{self.bankroll}'
+		return self.bankroll
 
 	def get_bet(self):
 
