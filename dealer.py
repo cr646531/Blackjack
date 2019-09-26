@@ -15,9 +15,6 @@ class Dealer(Player):
 
 	def play(self, deck):
 
-		while total <= 16:
-			temp = deck.pop(0)
-			self.hit(temp)
-			self.get_hand()
-			total = self.get_total()
+		while self.get_total() <= 16:
+			self.hit(deck.pop(0))
 
