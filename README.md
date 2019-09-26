@@ -1,4 +1,3 @@
-'''
 A text-based Python Blackjack game
 
 To play, change directory into the folder and run the command 'python blackjack.py' in the command line
@@ -21,4 +20,3 @@ The player with the highest total at the end of the game wins.
 The game will continue until either: the player quits or the player runs out of money
 
 Good luck!
-'''
