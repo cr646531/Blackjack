@@ -16,6 +16,7 @@ def create_deck():
 			deck.append(temp)
 
 	return deck
+	
 
 # Prints each individual card in a deck - used for testing purposes
 def print_deck(deck):
@@ -30,3 +31,4 @@ def shuffle_deck(deck):
 	import random
 
 	random.shuffle(deck)
+
