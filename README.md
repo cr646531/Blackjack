@@ -1,3 +1,5 @@
+# Blackjack
+
 A text-based Python Blackjack game
 
 To play, change directory into the folder and run the command 'python blackjack.py' in the command line

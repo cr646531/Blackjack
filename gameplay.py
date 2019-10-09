@@ -12,7 +12,7 @@ def create_player():
 	player = Player(name)
 	print(f'\n{str(player)}')
 	return player
-	
+
 
 def prompt_bet(player):
 
@@ -31,6 +31,10 @@ def prompt_bet(player):
 	print(f'Current bet: ${player.bet}')
 
 
+# deals two cards to the player and one card to the dealer
+# @parameters - deck, player, dealer
+# @output - none
+
 def deal(deck, player, dealer):
 
 	player.hit(deck.pop(0))
@@ -38,6 +42,9 @@ def deal(deck, player, dealer):
 	dealer.hit(deck.pop(0))
 	show_hands(player, dealer)
 
+# prints both the player's hand and the dealer's hand to the screen
+# @parameters - player, dealer
+# @output - none
 
 def show_hands(player, dealer):
 	print(f"---------------------------------------------------------------------\n")
@@ -45,6 +52,9 @@ def show_hands(player, dealer):
 	print(f"Player's hand: {player.get_hand()}\n")
 	print(f"---------------------------------------------------------------------\n")
 
+# prompts the player for the next actions (hit, stay, double-down)
+# uses the hit and double-down functions from the Player class
+# 
 
 def prompt_player_action(deck, player, dealer):
 
