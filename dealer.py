@@ -18,3 +18,5 @@ class Dealer(Player):
 		while self.get_total() <= 16:
 			self.hit(deck.pop(0))
 
+		
+
